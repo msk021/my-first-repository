@@ -8,35 +8,39 @@ public class Movement : MonoBehaviour
     public int Yincrement;
     public float speed;
     public float maxHeight;
-    public float minHeight;   
+    public float minHeight;
+    private Vector2 targetPos;
 
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
         {
 
-            Pomeranje(+3);
+            Moving(+3);
             /*targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             transform.position = targetPos;
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime); */
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);*/
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
-            Pomeranje(-3);
+            Moving(-3);
             /*targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-            transform.position = targetPos;
+            transform.position = targetPos; 
             transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);*/
         }
 
          
     }
 
-    void Pomeranje(int broj)
+    void Moving(int broj)
     {
-        Vector2 targetPos = new Vector2(transform.position.x, transform.position.y + broj);
-        transform.position = targetPos;
+
+        targetPos = new Vector2(transform.position.x, transform.position.y + broj);
+        //transform.position = targetPos;
     }
+
 }
