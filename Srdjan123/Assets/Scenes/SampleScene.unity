@@ -284,6 +284,7 @@ MonoBehaviour:
   speed: 1000
   maxHeight: 3
   minHeight: -3
+  health: 3
 --- !u!50 &199666025
 Rigidbody2D:
   serializedVersion: 4
@@ -443,14 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d329f71314a1f04094f1f3161b6a322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 5403011328830457786, guid: 04b51a82f89718943a33020a7a8bdb77,
-    type: 3}
-  positions:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  screenHeight: 4.5
-  wantedPositions: 3
 --- !u!4 &602283741
 Transform:
   m_ObjectHideFlags: 0
@@ -464,4 +457,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1691235915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691235918}
+  - component: {fileID: 1691235917}
+  - component: {fileID: 1691235916}
+  m_Layer: 0
+  m_Name: boza spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1691235916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691235915}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3603b1543b0394680eac9e5d179dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePattern:
+  - {fileID: 2909977803962647638, guid: 7ce7a912c3f83934e99ab388b18b2b86, type: 3}
+  - {fileID: 2669518756815855550, guid: f2fe040de33154f419bfa0531c3a0787, type: 3}
+  - {fileID: 2132631891034831351, guid: ec3185488873c9543928476604d92aca, type: 3}
+  startTimeBtwSpawn: 4
+  decreaseTime: 0.1
+  minTime: 1
+--- !u!114 &1691235917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691235915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2530ed4e39306499cee57b74cbd0eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePatterns:
+  - {fileID: 2909977803962647638, guid: 7ce7a912c3f83934e99ab388b18b2b86, type: 3}
+  - {fileID: 2669518756815855550, guid: f2fe040de33154f419bfa0531c3a0787, type: 3}
+  - {fileID: 2132631891034831351, guid: ec3185488873c9543928476604d92aca, type: 3}
+  timeBtwSpawn: 4
+  currentTimeBtwSpawn: 0
+  timeDecreaser: 0.1
+  minimalTime: 0
+--- !u!4 &1691235918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691235915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
