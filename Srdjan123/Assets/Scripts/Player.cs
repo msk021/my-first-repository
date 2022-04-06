@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
-    public int Yincrement;
-    public float speed;
+    // private int Yincrement;
+    public  float speed;
     public float maxHeight;
     public float minHeight;
     private Vector2 targetPos;
+    public int health = 3;
 
 
     // Update is called once per frame
@@ -42,5 +43,6 @@ public class Movement : MonoBehaviour
         targetPos = new Vector2(transform.position.x, transform.position.y + broj);
         //transform.position = targetPos;
     }
+
 
 }
